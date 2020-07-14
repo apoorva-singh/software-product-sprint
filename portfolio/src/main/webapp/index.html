@@ -5,14 +5,34 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <style>
+	body {
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+	</style>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <div id="buttons">
+      <a href="contact.html">
+        <button class="button button1" style="float:right">Contact</button>
+      </a>
+      <a href="funstuff.html">
+        <button class="button button1" style="float:right">Fun Stuff</button>
+      </a>
+      <a href="internships.html">
+        <button class="button button1" style="float:right">Internships</button>
+      </a>
+      <a href="about.html">
+        <button class="button button1" style="float:right">About</button>
+      </a>
     </div>
+    <hr>
+    <div id="content" style="display: inline-block; position:fixed; top:40%; bottom:0; left:0; right:0;">
+      <h1 style="text-align:center; font-size:60px; color:black">Hey,<br>I'm Apoorva!</h1>
+      <!--p style="text-align:center; font-size:25px; color:black">...a learner!<p-->
+    </div> 
   </body>
 </html>

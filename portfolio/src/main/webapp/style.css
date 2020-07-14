@@ -7,3 +7,49 @@
 #greeting-container {
   margin-top: 20px;
 }
+.scrollable {
+  overflow-x: auto; 
+  overflow-y: auto;
+}
+
+#body {
+  background-image: url('https://img.freepik.com/free-photo/cloud-background-with-pastel-colour_66899-764.jpg?size=626&ext=jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.button {
+  border: none;
+  color: black;
+  padding: 1% 2%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;;
+}
+
+.button1 {
+  border-radius: 5px;
+  background-color: skyblue; 
+  color: white; 
+}
+
+.button1:hover {
+  background-color: transparent;
+  color: black;
+}
+      
+.button2 {
+  border-radius: 12px;
+  background-color: skyblue;
+  color: white;
+}
+      
+.button2:hover {
+  background-color: transparent;
+  color: tomato;
+}
