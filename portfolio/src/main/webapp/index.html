@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <!--script src="script.js"></script-->
     <style>
 	body {
   background-image: url('/images/background.jpg');
@@ -30,12 +30,23 @@
       </a>
     </div>
     <hr>
-    <div id="content" style="display: inline-block; position:fixed; top:40%; bottom:0; left:0; right:0;">
+    <div id="content" style="display: inline-block; position:fixed; top:1%; bottom:0; left:0; right:0;">
       <h1 style="text-align:center; font-size:60px; color:black">Hey,<br>I'm Apoorva!</h1>
       <!--p style="text-align:center; font-size:25px; color:black">...a learner!<p-->
-      <p>Click here to get a random greeting:</p>
+      <!--p>Click here to get a random greeting:</p>
       <button onclick="getRandomGreeting()">Fetch a greeting!</button>
-      <div id="greeting-container"></div>
+      <div id="greeting-container"></div-->
+      <p>In case you want to send me a message, fill out the following form.</p>
+      <form action="/data">
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" value="Apoorva Singh"><br><br>
+          <label for="email">Email ID:</label><br>
+          <input type="text" id="email" name="email" value="abc@xyz.com"><br><br>
+          <label for="message">Message:</label><br>
+          <textarea name="message">Type your message here</textarea><br>
+          <br>
+          <input type="submit" value="Submit">
+      </form>
     </div> 
   </body>
 </html>
