@@ -31,6 +31,38 @@ public class DataServlet extends HttpServlet {
     String greeting = greetings[(int)(Math.floor(Math.random() * greetings.length))];
 
     response.setContentType("text/html;");
-    response.getWriter().println("<p>" + greeting + "</p>");
+    response.getWriter().println(greeting);
+
+    //hard-coded messages to be converted to JSON data for test
+
+    /*
+    ArrayList<String> TestMessages= new ArrayList<String>(); 
+                TestMessages.add("Apoorva says hello world!"); 
+                TestMessages.add("Apoorva dice hola mundo!"); 
+                TestMessages.add("Apoorva dit bonjour au monde!"); 
+    */
+
+    //ArrayList<String> TestMessages = new ArrayList<>(Arrays.asList("Apoorva says hello world!", "Apoorva dice hola mundo!", "Apoorva dit bonjour au monde!"));
+    String[] TestMessages = {"Apoorva says hello world!", "Apoorva dice hola mundo!", "Apoorva dit bonjour au monde!"};
+    // Convert the test messages to JSON
+    String json = convertToJson(TestMessages);
+
+    // Send the JSON as the response
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
+  }
+
+  private String convertToJson(String[] TestMessages) {
+    String json = "{";
+    json += "\"message1\": ";
+    json += "\"" + TestMessages[0] + "\"";
+    json += ", ";
+    json += "\"message2\": ";
+    json += "\"" + TestMessages[1] + "\"";
+    json += ", ";
+    json += "\"message3\": ";
+    json += "\"" + TestMessages[2] + "\"";
+    json += "}";
+    return json;
   }
 }
