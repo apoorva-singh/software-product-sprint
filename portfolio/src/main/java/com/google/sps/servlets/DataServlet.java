@@ -19,6 +19,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
@@ -31,7 +34,7 @@ public class DataServlet extends HttpServlet {
     
     String greeting = greetings[(int)(Math.floor(Math.random() * greetings.length))];*/
 
-    response.sendRedirect("index.html");
+    //response.sendRedirect("index.html");
     /*
     //hard-coded messages to be converted to JSON data for test
 
@@ -52,10 +55,18 @@ public class DataServlet extends HttpServlet {
     String email = getParameter(request, "email", "");
     String message = getParameter(request, "message", "");
 
+    Entity taskEntity = new Entity("Task");
+    taskEntity.setProperty("name", name);
+    taskEntity.setProperty("email", email);
+    taskEntity.setProperty("message", message);
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(taskEntity);
+
     // Respond with the result.
     response.setContentType("text/html;");
     response.getWriter().println("Thank you for your message. You will hear from me soon!");
-    //response.sendRedirect("index.html");
+    response.sendRedirect("index.html");
   }
 
   /**
