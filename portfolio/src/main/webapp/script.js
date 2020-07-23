@@ -17,12 +17,40 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['Hello Apoorva!', '¡Hola Apoorva!', '你好，阿波娃！', 'Bonjour le Apoorva!'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
   // Add it to the page.
+  const greetingContainer = document.getElementById('greeting-container');
+  greetingContainer.innerText = greeting;
+}
+
+function getRandomGreeting() {
+  console.log('Fetching a random greeting.');
+
+  // The fetch() function returns a Promise because the request is asynchronous.
+  const responsePromise = fetch('/data');
+
+  // When the request is complete, pass the response into handleResponse().
+  responsePromise.then(handleResponse);
+}
+
+function handleResponse(response) {
+  console.log('Handling the response.');
+
+  // response.text() returns a Promise, because the response is a stream of
+  // content and not a simple variable.
+  const textPromise = response.text();
+
+  // When the response is converted to text, pass the result into the
+  // addQuoteToDom() function.
+  textPromise.then(addGreetingToDom);
+}
+
+function addGreetingToDom(greeting) {
+  console.log('Adding greeting to dom: ' + greeting);
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+	body {
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+	</style>
+  </head>
+  <body>
+    <div id="buttons">
+      <a href="funstuff.html" class="button button1" style="float:right">Fun Stuff
+        <!--button class="button button1" style="float:right">Fun Stuff</button-->
+      </a>
+      <a href="internships.html" class="button button1" style="float:right">Internships
+        <!--button class="button button1" style="float:right">Internships</button-->
+      </a>
+      <a href="about.html" class="button button1" style="float:right">About
+        <!--button class="button button1" style="float:right">About</button-->
+      </a>
+      <a href="index.html" class="button button1" style="float:right">Home
+        <!--button class="button button1" style="float:right">Home</button-->
+      </a>
+    </div>
+    <hr>
+    <div id="content" style="display: inline-block; position:fixed; top:20%; bottom:0; left:0; right:0;" class="scrollable">
+        <!--p style="font-size:30px"-->
+        <p>To send me a direct message, fill out the following form:</p>
+        <form action="/data" method = POST>
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" value="Apoorva Singh"><br><br>
+          <label for="email">Email ID:</label><br>
+          <input type="text" id="email" name="email" value="abc@xyz.com"><br><br>
+          <label for="message">Message:</label><br>
+          <textarea name="message">Type your message here</textarea><br>
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+        <p><b>Phone</b>: (+91) 9415390833<br><b>Institute Email</b>: apoorvas@iitk.ac.in<br><b>Personal Email</b>: singh.apoorva.0803@gmail.com</p>
+        <a href="https://www.instagram.com/apoorvas_8/">
+        <img src="/images/ig.jpg" alt="instagram icon" style="border-radius:80%; width:35px; height:30px; float:left">
+        </a>
+        <a href="https://www.facebook.com/apoorva.singh.0803">
+          <img src="/images/fb.png" alt="fb icon" style="border-radius:80%; width:35px; height:30px; float:left">
+        </a>
+        <a href="https://twitter.com/_apoorvasingh_">
+          <img src="/images/twitter.png" alt="twitter icon" style="border-radius:80%; width:35px; height:30px; float:left">
+        </a>
+        <a href="https://www.linkedin.com/in/apoorvasingh0803/">
+          <img src="/images/linkedin.png" alt="linkedin icon" style="border-radius:80%; width:35px; height:30px; float:left">
+        </a>
+        <a href="https://github.com/apoorva-singh">
+          <img src="/images/git.png" alt="git icon" style="border-radius:80%; width:35px; height:30px; float:left">
+        </a>
+    </div> 
+  </body>
+</html>
